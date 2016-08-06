@@ -10,6 +10,7 @@ This version plugin supported gradle version 2.14.1 and gradle tools 2.1.2
 # How to use
 
 In android gradle project
+
 1) Open gradle-wrapper.properties and replace version gradle on 2.14.1
 
 distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
@@ -86,9 +87,15 @@ tasks.withType(ScalaCompile) {
 
 
 4) Synh Now gradle
+
 5) In explorer open folder C:/users/MyName/.gradle/
+
 6) find gradle-android-scala-plugin-1.4.jar
+
 8) Close Android studio
+
 7) Replace gradle-android-scala-plugin-1.4.jar file this modification
+
 8) Open Android Studio
+
 9) Compile project. Congratulations.
