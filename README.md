@@ -14,9 +14,9 @@ In android gradle project
 
 1) Open gradle-wrapper.properties and replace version gradle on 2.14.1
 
-distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
+	distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
 
-2) in build.gradle project
+2) in `build.gradle` project
 
 	buildscript {
 		repositories {
@@ -38,7 +38,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
 		delete rootProject.buildDir
 	}
 
-3) in build.gradle module
+3) in `build.gradle` module
 
 	apply plugin: 'com.android.application'
 	apply plugin: 'jp.leafytree.android-scala'
@@ -89,13 +89,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
 
 4) Synh Now gradle
 
-5) In explorer open folder C:/users/MyName/.gradle/
+5) In explorer open folder `C:/users/MyName/.gradle/`
 
-6) find gradle-android-scala-plugin-1.4.jar
+6) find `gradle-android-scala-plugin-1.4.jar`
 
-8) Close Android studio
+8) Close Android Studio
 
-7) Replace gradle-android-scala-plugin-1.4.jar file this modification
+7) Replace `gradle-android-scala-plugin-1.4.jar` file this modification
 
 8) Open Android Studio
 
