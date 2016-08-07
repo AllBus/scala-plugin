@@ -1,11 +1,10 @@
-# scala-plugin
-scala plugin for android
+# Scala-plugin for Android
 
 This is mod of gradle-android-scala-plugin from
 
 https://github.com/saturday06/gradle-android-scala-plugin
 
-This version plugin supported gradle version 2.14.1 and gradle tools 2.1.2
+This version of plugin supported gradle version 2.14.1 and gradle tools 2.1.2
 
 
 # How to use
@@ -49,7 +48,6 @@ In android gradle project
 
 		defaultConfig {
 			applicationId "com.mycompany.myproject"
-			minSdkVersion 21
 			targetSdkVersion 24
 			versionCode 1
 			versionName "1.0"
@@ -87,7 +85,7 @@ In android gradle project
 	}
 
 
-4) Synh Now gradle
+4) Sync Now gradle
 
 5) In explorer open folder `C:/users/MyName/.gradle/`
 
