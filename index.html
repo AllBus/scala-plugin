@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Scala-plugin by AllBus</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Scala-plugin</h1>
+        <h2>scala plugin for android</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/AllBus/scala-plugin/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/AllBus/scala-plugin/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/AllBus/scala-plugin" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="scala-plugin-for-android" class="anchor" href="#scala-plugin-for-android" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scala-plugin for Android</h1>
+
+<p>This is mod of gradle-android-scala-plugin from</p>
+
+<p><a href="https://github.com/saturday06/gradle-android-scala-plugin">https://github.com/saturday06/gradle-android-scala-plugin</a></p>
+
+<p>This version of plugin supported gradle version 2.14.1 and gradle tools 2.1.2</p>
+
+<h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h1>
+
+<p>In android gradle project</p>
+
+<p>1) Open gradle-wrapper.properties and replace version gradle on 2.14.1</p>
+
+<pre><code>distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
+</code></pre>
+
+<p>2) in <code>build.gradle</code> project</p>
+
+<pre><code>buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'jp.leafytree.gradle:gradle-android-scala-plugin:1.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+</code></pre>
+
+<p>3) in <code>build.gradle</code> module</p>
+
+<pre><code>apply plugin: 'com.android.application'
+apply plugin: 'jp.leafytree.android-scala'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.mycompany.myproject"
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    productFlavors {
+        dev {
+            minSdkVersion 21 // To reduce compilation time
+        }
+
+        prod {
+            minSdkVersion 16
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'org.scala-lang:scala-library:2.11.8'
+}
+
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.useCompileDaemon = true
+    scalaCompileOptions.deprecation = false
+    scalaCompileOptions.additionalParameters = ["-feature"]
+}
+</code></pre>
+
+<p>4) Sync Now gradle</p>
+
+<p>5) In explorer open folder <code>C:/users/MyName/.gradle/</code></p>
+
+<p>6) find <code>gradle-android-scala-plugin-1.4.jar</code></p>
+
+<p>8) Close Android Studio</p>
+
+<p>7) Replace <code>gradle-android-scala-plugin-1.4.jar</code> file this modification</p>
+
+<p>8) Open Android Studio</p>
+
+<p>9) Compile project. Congratulations.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
