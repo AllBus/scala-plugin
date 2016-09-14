@@ -37,6 +37,8 @@ In android gradle project
 		}
 	}
 
+	ScalaCompileOptions.metaClass.useAnt = false
+	
 	task clean(type: Delete) {
 		delete rootProject.buildDir
 	}
